@@ -1,0 +1,33 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter number:");
+        int size=sc.nextInt();
+
+
+        try{
+            check(size);
+            String[] arr=new String[size];
+        }
+
+        catch(Exception e){
+            System.out.println(e.getMessage());
+
+        }
+        finally{
+            System.out.println("finally block executed");
+        }
+
+
+    }
+     static void check(int size) throws Exception{
+        if(size<0){
+            throw new Exception("Size in negative");
+        }
+        else{
+            System.out.println("accepted");
+        }
+
+    }
+}
