@@ -1,0 +1,29 @@
+import java.sql.SQLOutput;
+import java.util.Scanner;
+class vehicle{
+    int age=80;
+    void start(){
+        System.out.println("vehicle is starting..." );
+    }
+}
+class car extends vehicle{
+    int age=90;
+    void show(){
+        System.out.println("car is starting ...");
+    }
+    void details() {
+        System.out.println(age);
+        System.out.println(super.age);
+    }
+}
+
+public class Main {
+    public static void  main(String[] args) {
+        car obj=new car();
+        obj.start();
+        obj.show();
+        obj.details();
+
+
+    }
+}
