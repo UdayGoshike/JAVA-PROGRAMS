@@ -1,0 +1,44 @@
+import java.sql.SQLOutput;
+import java.util.Scanner;
+public class Main {
+    public  static double root(double a,double b,double c){
+        double D=b*b-(4*a*c);
+
+        return D;
+    }
+
+    public static void  main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        System.out.println("enter a:");
+            double a = obj.nextDouble();
+        System.out.println("enter b:");
+            double b = obj.nextDouble();
+        System.out.println("enter c:");
+            double c = obj.nextDouble();
+            double D=root(a,b,c);
+            System.out.println("Discriminant:"+D);
+
+            if(D==0) {
+                double r= -b/(2*a);
+                System.out.println("roots:"+r);
+                System.out.println("real and equal");
+
+            } else if (D<0) {
+                double real= -b/(2*a);
+                double img=Math.sqrt(-D)/(2*a);
+                System.out.println("roots:");
+                System.out.println(real+"+"+img);
+                System.out.println(real+"-"+img);
+                System.out.println("complex and distinct");
+
+            }else if(D>0){
+                System.out.println("Real and distinct");
+                double r1=(-b-Math.sqrt(D))/(2*a);
+                double r2=(-b+Math.sqrt(D))/(2*a);
+                System.out.println("Roots are:"+r1);
+                System.out.println("Roots are:"+r2);
+            }
+
+
+    }
+}
