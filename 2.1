@@ -1,0 +1,41 @@
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.sql.SQLOutput;
+import java.util.Scanner;
+class animal{
+    String type="Animal";
+    animal(){
+        System.out.println("Animal costructor called.");
+    }
+     void makesounds(){
+         System.out.println("ANIMAL SOUNDS.");
+     }
+
+
+}
+class dog extends animal{
+    String type="Dog";
+    dog(){
+        super();
+        System.out.println("Dog constructor called.");
+    }
+    void makesound(){
+        super.makesounds();
+        System.out.println("DOG SOUNDS.");
+    }
+
+    void displaytypes(){
+        System.out.println("Animal type:"+super.type);
+        System.out.println("dog type:"+type);
+    }
+}
+
+public class Main {
+
+    public static void  main(String[] args) {
+        dog obj1=new dog();
+        obj1.displaytypes();
+        obj1.makesound();
+
+    }
+}
