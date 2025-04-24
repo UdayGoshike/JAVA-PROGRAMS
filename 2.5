@@ -1,0 +1,56 @@
+class Person {
+    String name;
+    int age;
+
+    // --- Constructor Overloading ---
+
+    // Default constructor
+    Person() {
+        name = "Unknown";
+        age = 0;
+    }
+
+    // Constructor with name only
+    Person(String name) {
+        this.name = name;
+        this.age = 0;
+    }
+
+    // Constructor with name and age
+    Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // --- Method Overloading ---
+
+    void display() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+
+    void display(String greeting) {
+        System.out.println(greeting + " " + name + "!");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        // Constructor Overloading
+        Person p1 = new Person();                 // default constructor
+        Person p2 = new Person("Alice");          // constructor with name
+        Person p3 = new Person("Bob", 25);        // constructor with name and age
+
+        // Method Overloading
+        System.out.println("--- Method Overloading ---");
+        p1.display();               // Method with no parameter
+        p2.display("Hello");        // Method with one parameter
+        p3.display();               // Method with no parameter
+
+        // Constructor outputs shown via method calls
+        System.out.println("\n--- Constructor Overloading Results ---");
+        p1.display();
+        p2.display();
+        p3.display();
+    }
+}
