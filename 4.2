@@ -1,0 +1,59 @@
+import java.util.Random;
+class firstthread extends thread{
+    int r;
+    public firstthread(int random){
+        this.r=random;
+    }
+
+    @Override
+    public void run() {
+        System.out.println(r*r);
+    }
+}
+class secondthread extends thread{
+
+    int r;
+    public secondthread (int random){
+        this.r=random;
+    }
+
+    @Override
+    public void run() {
+        System.out.println((r*r)*r);
+    }
+
+
+}
+class thread extends Thread {
+    public void run() {
+        Random rand = new Random();
+        try {
+            while (true) {
+                int random = rand.nextInt(100);
+                if ((random % 2) == 0) {
+                    firstthread ft = new firstthread(random);
+                    ft.start();
+                } else {
+                    secondthread st = new secondthread(random);
+                    st.start();
+                }
+
+
+                Thread.sleep(500);
+
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        thread th = new thread();
+        th.start();
+    }
+}
+
