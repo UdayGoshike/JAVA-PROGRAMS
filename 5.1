@@ -1,0 +1,26 @@
+interface implements1 {
+    public void run();
+}
+interface implements2{
+    public void show();
+}
+class mulinh implements implements1,implements2{
+    @Override
+    public void run() {
+        System.out.println("running...");
+    }
+
+    @Override
+    public void show() {
+        System.out.println("showing....");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        mulinh obj1=new mulinh();
+        obj1.run();
+        obj1.show();
+    }
+}
+
