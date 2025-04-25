@@ -1,0 +1,30 @@
+class mythread implements Runnable {
+    @Override
+    public void run() {
+
+            System.out.println("running 1...");
+
+    }
+}
+class mythread2 implements Runnable {
+    @Override
+    public void run() {
+
+            System.out.println("running 2...");
+
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+
+        mythread bullet1=new mythread();
+        Thread gun1=new Thread(bullet1);
+        mythread2 bullet2=new mythread2();
+        Thread gun2=new Thread(bullet2);
+        gun1.start();
+        gun2.start();
+    }
+
+}
