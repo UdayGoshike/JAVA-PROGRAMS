@@ -1,0 +1,28 @@
+class mythread extends Thread {
+    @Override
+    public void run() {
+        while(true) {
+            System.out.println("running 1...");
+        }
+    }
+}
+class mythread2 extends Thread {
+    @Override
+    public void run() {
+        while(true) {
+            System.out.println("running 2...");
+        }
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+
+        mythread t1=new mythread();
+        mythread2 t2=new mythread2();
+        t1.start();
+        t2.start();
+    }
+
+}
