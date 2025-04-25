@@ -1,0 +1,37 @@
+class mythread extends Thread{
+    @Override
+    public void run() {
+        while(true) {
+            System.out.println(this.getName());
+        }
+
+
+    }
+    public mythread(String name){
+        super(name);
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+
+        mythread bullet1=new mythread("Uday");
+        mythread bullet2=new mythread("goshike");
+        mythread bullet3=new mythread("kumar");
+        mythread bullet4=new mythread("r1");
+        mythread bullet5=new mythread("r2");
+        bullet1.setPriority(Thread.MAX_PRIORITY);
+        bullet2.setPriority(Thread.MIN_PRIORITY);
+        bullet3.setPriority(Thread.MIN_PRIORITY);
+        bullet4.setPriority(Thread.MIN_PRIORITY);
+        bullet5.setPriority(Thread.MIN_PRIORITY);
+        bullet1.start();
+        bullet2.start();
+        bullet3.start();
+        bullet4.start();
+        bullet5.start();
+
+    }
+
+}
