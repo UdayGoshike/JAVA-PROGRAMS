@@ -1,0 +1,45 @@
+//Main.java
+package pl;
+
+import pg1.package1;
+import pl2.package2;
+public class Main {
+
+    public static void main(String[]args) {
+        package1 pack1=new package1();
+        package2 pack2=new package2();
+        pack1.display();
+        pack2.display();
+
+    }
+
+
+}
+//package1.java
+package pg1;
+public class package1 {
+    public int pubvar=4;
+    int defvar=4;
+    protected int provar=4;
+    private int privar=4;
+    public void display(){
+        System.out.println("from package1:"+pubvar);
+        System.out.println("from package1:"+defvar);
+        System.out.println("from package1:"+provar);
+        System.out.println("from package1:"+privar);
+
+
+    }
+}
+//package2.java
+package pl2;
+import pg1.package1;
+public class package2 extends package1{
+    public void display(){
+        System.out.println("from package2:"+pubvar);
+//        System.out.println(defvar);
+        System.out.println("from package2:"+provar);
+//        System.out.println(privar);
+    }
+
+}
