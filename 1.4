@@ -1,21 +1,27 @@
-import java.sql.SQLOutput;
-import java.util.Scanner;
 public class Main {
-    static int age=0;
-    static{
+    static int age = 0;  // static variable
+
+    // static block
+    static {
         System.out.println("static block executed");
     }
-    Main(){
+
+    // constructor
+    static void update(){
+       System.out.println("updated...."); 
         age++;
     }
-    static void hi(){
-        System.out.println(age);
+
+    // static method
+    static void display() {
+        System.out.println("count:"+age);
     }
-    public static void  main(String[] args) {
-        Main.hi();
-        Main obj1=new Main();
-        Main.hi();
-        Main obj2=new Main();
-        Main.hi();
+
+    public static void main(String[] args) {
+        Main.display();              // prints age
+        Main.update(); // constructor increments age
+        Main.display();              // prints age
+        Main.update();  
+         Main.display(); // prints updated age
     }
 }
