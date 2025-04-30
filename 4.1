@@ -28,3 +28,13 @@ class mythread2 implements Runnable {
 
     }
 }
+
+public class ThreadExample {
+    public static void main(String[] args) {
+        Thread t1 = new Thread(new mythread());
+        Thread t2 = new Thread(new mythread2());
+
+        t1.start(); // starts thread 1
+        t2.start(); // starts thread 2
+    }
+}
